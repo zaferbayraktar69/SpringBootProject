@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ürünler</title>
+</head>
+<body>
+<div align="center">
+	<h1> URUNLER  </h1>
+	
+
+	<a href="yenikayit"><button type="submit" >Ürün Ekle</button></a>
+	<br/>
+	<br/>
+	<table border="1">
+		<thread>
+			<tr>
+				<th>URUN ID</th>
+				<th>URUN ADI</th>
+				<th>MARKA</th>
+				<th>URETIM YERI</th>	
+				<th>FIYAT</th>
+				<th>AYARLAR</th>
+			</tr>
+		</thread>
+		<tbody>
+			<tr th:each="urun : ${urunleriGetir}">
+			
+				<td th:text="${urun.id}">URUN ID</td>
+				<td th:text="${urun.ad}">URUN AD</td>
+				<td th:text="${urun.marka}">MARKA</td>
+				<td th:text="${urun.uretimyeri}">URETIM YERI</td>
+				<td th:text="${urun.fiyat}">FIYAT</td>
+				
+				<td> 
+						<a th:href = "@{'duzenle/' + ${urun.id}}"><button type="submit">Düzenle</button></a>
+						&nbsp;
+						<a th:href = "@{'sil/' + ${urun.id}}"><button type="submit" style="color:red;">Sil</button></a>
+				    </td>
+			</tr>
+			
+		
+		
+		</tbody>
+	</table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Yeni Ürün Ekle</title>
+</head>
+<body>
+
+	<div align="center">
+		<h1> Yeni Ürün Ekle</h1>
+		<br/>
+		<form action="#" th:action="@{/kaydet}" th:object="${urun}" method="post">
+			<table border="0" cellpadding="10">
+
+				<tr>
+					<td>Ürün Adı    : </td>
+					
+					<td><input type:"text" th:field="*{ad}" /></td>
+				</tr>
+				<tr>
+					<td>Marka       : </td>
+					<td><input type:"text" th:field="*{marka}" /></td>
+				</tr>
+				<tr>
+					<td>Üretim Yeri : </td>
+					<td><input type:"text" th:field="*{uretimyeri}" /></td>
+				</tr>
+				<tr>
+					<td>Fiyat       : </td>
+					<td><input type:"text" th:field="*{fiyat}" /></td>
+				</tr>		
+				<tr>
+					<td colspan="2" ><button type="submit">Kaydet</button></td>
+				</tr>				
+
+			</table>
+		
+		</form>
+	
+	</div>
+
+</body>
+</html>
